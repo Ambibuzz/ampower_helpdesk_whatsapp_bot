@@ -5,7 +5,6 @@ import frappe
 def send_message(to, message):
     """Send WhatsApp message using WhatsApp Message DocType"""
     try:
-        # Get default WhatsApp account
         whatsapp_account = frappe.db.get_value(
             "WhatsApp Account",
             {"is_default_outgoing": 1},
@@ -36,7 +35,7 @@ def get_optin(phone):
     return frappe.db.get_value(
         "WhatsApp Opt-in",
         {"phone_number": phone, "consent_status": "Opted In", "is_active": 1},
-        ["name", "customer_name", "email", "department", "company"],
+        ["name", "customer_name", "email", "entered_company_name", "company", "can_view_company_tickets"],
         as_dict=True
     )
 
