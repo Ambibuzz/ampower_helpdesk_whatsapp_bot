@@ -8,6 +8,14 @@ from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.utils import send_mes
 
 
 class WhatsAppOptin(Document):
+	def validate(self):
+		# Company-level visibility only makes sense when a company is linked.
+		if self.can_view_company_tickets and not self.company:
+			frappe.throw(
+				"'Can View Company Tickets' requires a linked Company. "
+				"Set the Company first, or uncheck this option."
+			)
+
 	def on_update(self):
 		on_optin_update(self)
 

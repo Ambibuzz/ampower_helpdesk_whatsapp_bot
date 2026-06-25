@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{phone_number}-{email}",
  "creation": "2026-06-10 16:56:27.005008",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -8,8 +9,9 @@
   "phone_number",
   "customer_name",
   "email",
-  "department",
+  "entered_company_name",
   "company",
+  "can_view_company_tickets",
   "consent_status",
   "consent_method",
   "consent_date",
@@ -33,15 +35,23 @@
    "label": "email"
   },
   {
-   "fieldname": "department",
+   "fieldname": "entered_company_name",
    "fieldtype": "Data",
-   "label": "department"
+   "label": "Entered Company Name"
   },
   {
    "fieldname": "company",
    "fieldtype": "Link",
    "label": "company",
    "options": "HD Customer"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.company",
+   "description": "When enabled, this person can view all tickets for their company. When disabled, only the tickets they raised. Requires a linked company.",
+   "fieldname": "can_view_company_tickets",
+   "fieldtype": "Check",
+   "label": "Can View Company Tickets"
   },
   {
    "default": "Pending",
