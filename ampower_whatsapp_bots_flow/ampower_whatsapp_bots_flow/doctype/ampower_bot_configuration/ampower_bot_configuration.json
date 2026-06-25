@@ -1,0 +1,51 @@
+{
+ "actions": [],
+ "creation": "2026-06-17 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "api_url",
+  "api_token"
+ ],
+ "fields": [
+  {
+   "fieldname": "api_url",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "API URL",
+   "options": "URL",
+   "reqd": 1,
+   "description": "Base URL of the remote Helpdesk site, e.g. https://helpdesk.example.com"
+  },
+  {
+   "fieldname": "api_token",
+   "fieldtype": "Password",
+   "label": "API Token",
+   "reqd": 1,
+   "description": "Token for the remote Helpdesk REST API in the form 'api_key:api_secret'."
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-06-17 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ampower Whatsapp Bots Flow",
+ "name": "Ampower Bot Configuration",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
