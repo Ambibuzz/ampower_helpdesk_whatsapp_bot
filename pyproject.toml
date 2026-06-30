@@ -1,9 +1,9 @@
 [project]
-name = "ampower_whatsapp_bots_flow"
+name = "ampower_helpdesk_whatsapp_bot"
 authors = [
     { name = "Ambibuzz Technologies LLP", email = "ithead@ambibuzz.com"}
 ]
-description = "ampower_whatsapp_bots_flow"
+description = "ampower_helpdesk_whatsapp_bot"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]
