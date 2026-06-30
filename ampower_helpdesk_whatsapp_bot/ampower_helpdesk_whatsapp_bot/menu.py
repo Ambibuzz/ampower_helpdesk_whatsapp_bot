@@ -1,7 +1,8 @@
-# ampower_whatsapp_bots_flow/menu.py
+# ampower_helpdesk_whatsapp_bot/menu.py
 
 import frappe
-from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.utils import get_optin
+
+from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot.utils import get_optin
 
 # Canonical menu actions — the single source of truth for both the main menu
 # and the help/fallback, so they never drift apart. Each: (number, icon, name,
@@ -152,7 +153,7 @@ def handle_menu_selection(doc):
     if not optin:
         return "Type *START* to register first."
 
-    from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.ticket_create import handle_ticket_entry
+    from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot.ticket_create import handle_ticket_entry
 
     # A valid selection consumes the menu context so the same reply can't re-fire.
     if choice in MENU_NEW_PROBLEM:
@@ -165,7 +166,9 @@ def handle_menu_selection(doc):
 
     if choice in MENU_STATUS:
         clear_menu_context(phone)
-        from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.ticket_status import handle_status_entry
+        from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot.ticket_status import (
+            handle_status_entry,
+        )
         return handle_status_entry(phone)
 
     # Unrecognised — re-show the menu, keep the context armed.

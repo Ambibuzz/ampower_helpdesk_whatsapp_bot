@@ -1,8 +1,9 @@
-# ampower_whatsapp_bots_flow/ticket_create.py
+# ampower_helpdesk_whatsapp_bot/ticket_create.py
 
 import frappe
-from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow import hd_client
-from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.utils import get_optin
+
+from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot import hd_client
+from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot.utils import get_optin
 
 TICKET_TYPES = {"1": "Problem", "2": "Query"}
 
@@ -16,7 +17,7 @@ def handle_ticket_entry(phone, ticket_type=None):
     chose "New Problem"/"New Query"), skip the type-selection step and go
     straight to the description. If omitted, fall back to asking for the type.
     """
-    from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.menu import (
+    from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot.menu import (
         EXIT_HINT,
         clear_pending_flows,
     )
@@ -70,7 +71,7 @@ def handle_ticket_flow(doc):
 
     step = state.get("step")
 
-    from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.menu import EXIT_HINT
+    from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot.menu import EXIT_HINT
 
     # Step 1: Ticket type
     if step == "awaiting_type":

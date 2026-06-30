@@ -1,6 +1,7 @@
-# ampower_whatsapp_bots_flow/opt_in.py
+# ampower_helpdesk_whatsapp_bot/opt_in.py
 
 import frappe
+
 
 def handle_start(doc):
     """
@@ -10,7 +11,7 @@ def handle_start(doc):
     phone = doc.get("from")
 
     # START is a fresh entry point — cancel any flow the user was mid-way through.
-    from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.menu import clear_pending_flows
+    from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot.menu import clear_pending_flows
     clear_pending_flows(phone)
 
     existing = frappe.db.get_value(
@@ -42,7 +43,7 @@ def handle_start(doc):
             )
             frappe.db.commit()
 
-        from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.menu import (
+        from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot.menu import (
             arm_menu_context,
             get_menu_text,
         )
@@ -57,7 +58,7 @@ def handle_start(doc):
         expires_in_sec=600
     )
 
-    from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.menu import EXIT_HINT
+    from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot.menu import EXIT_HINT
     return (
         "👋 Welcome to *Ambibuzz Support*!\n\n"
         "To get started, we need a few details.\n\n"
@@ -82,7 +83,7 @@ def handle_onboarding(doc):
         return None  # Not in onboarding — let other rules handle
 
     step = state.get("step")
-    from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.menu import EXIT_HINT
+    from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot.menu import EXIT_HINT
 
     if step == "awaiting_name":
         state["customer_name"] = message
@@ -158,7 +159,7 @@ def handle_stop(doc):
 
     # Cancel any in-progress flow before asking to unsubscribe. This clears any
     # prior wa_unsub_ too; the fresh confirmation set below is the only one left.
-    from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.menu import clear_pending_flows
+    from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot.menu import clear_pending_flows
     clear_pending_flows(phone)
 
     optin = frappe.db.exists(
@@ -177,7 +178,7 @@ def handle_stop(doc):
         expires_in_sec=600
     )
 
-    from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.menu import EXIT_HINT
+    from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot.menu import EXIT_HINT
     return (
         "⚠️ *Confirm Unsubscribe*\n\n"
         "Are you sure you want to unsubscribe from Ambibuzz WhatsApp Support?\n\n"
@@ -225,7 +226,7 @@ def handle_unsubscribe_flow(doc):
             "Type *MENU* for the menu."
         )
 
-    from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.menu import EXIT_HINT
+    from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot.menu import EXIT_HINT
     return (
         "Please reply *YES* to unsubscribe or *NO* to stay subscribed.\n\n"
         f"{EXIT_HINT}"

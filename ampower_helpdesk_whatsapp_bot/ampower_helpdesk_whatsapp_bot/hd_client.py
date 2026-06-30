@@ -1,4 +1,4 @@
-# ampower_whatsapp_bots_flow/hd_client.py
+# ampower_helpdesk_whatsapp_bot/hd_client.py
 
 """
 HTTP client for the remote Helpdesk site.

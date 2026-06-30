@@ -1,8 +1,9 @@
-# ampower_whatsapp_bots_flow/ticket_status.py
+# ampower_helpdesk_whatsapp_bot/ticket_status.py
 
 import frappe
-from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow import hd_client
-from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.utils import get_optin
+
+from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot import hd_client
+from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot.utils import get_optin
 
 STATUS_EMOJI = {
     "Open": "🟡",
@@ -19,7 +20,7 @@ def handle_status_entry(phone):
     the user reply with a number (open from list), a Ticket ID, or SUBJECT to
     search by title.
     """
-    from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.menu import clear_pending_flows
+    from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot.menu import clear_pending_flows
     clear_pending_flows(phone)
 
     optin = get_optin(phone)
@@ -90,7 +91,7 @@ def handle_status_flow(doc):
 
         # SUBJECT → ask for the title, search on the next message.
         if message.upper() == "SUBJECT":
-            from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.menu import EXIT_HINT
+            from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot.menu import EXIT_HINT
             state["step"] = "awaiting_title"
             frappe.cache().set_value(f"wa_status_{phone}", state, expires_in_sec=600)
             return (
@@ -151,7 +152,7 @@ def _as_list_position(message, count):
 
 def _handle_title_search(term, phone, state):
     """Search the user's (or company's) tickets by subject and show top matches."""
-    from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.menu import EXIT_HINT
+    from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot.menu import EXIT_HINT
 
     term = term.strip()
     if len(term) < 3:

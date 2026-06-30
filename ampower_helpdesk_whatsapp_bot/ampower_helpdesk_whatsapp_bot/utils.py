@@ -1,6 +1,7 @@
-# ampower_whatsapp_bots_flow/utils.py
+# ampower_helpdesk_whatsapp_bot/utils.py
 
 import frappe
+
 
 def send_message(to, message):
     """Send WhatsApp message using WhatsApp Message DocType"""

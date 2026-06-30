@@ -4,7 +4,7 @@
 import frappe
 from frappe.model.document import Document
 
-from ampower_whatsapp_bots_flow.ampower_whatsapp_bots_flow.utils import send_message
+from ampower_helpdesk_whatsapp_bot.ampower_helpdesk_whatsapp_bot.utils import send_message
 
 
 class WhatsAppOptin(Document):
