@@ -8,7 +8,7 @@ repos:
     rev: v5.0.0
     hooks:
       - id: trailing-whitespace
-        files: "ampower_whatsapp_bots_flow.*"
+        files: "ampower_helpdesk_whatsapp_bot.*"
         exclude: ".*json$|.*txt$|.*csv|.*md|.*svg"
       - id: check-merge-conflict
       - id: check-ast
@@ -38,11 +38,11 @@ repos:
         # Ignore any files that might contain jinja / bundles
         exclude: |
             (?x)^(
-                ampower_whatsapp_bots_flow/public/dist/.*|
+                ampower_helpdesk_whatsapp_bot/public/dist/.*|
                 .*node_modules.*|
                 .*boilerplate.*|
-                ampower_whatsapp_bots_flow/templates/includes/.*|
-                ampower_whatsapp_bots_flow/public/js/lib/.*
+                ampower_helpdesk_whatsapp_bot/templates/includes/.*|
+                ampower_helpdesk_whatsapp_bot/public/js/lib/.*
             )$
 
 
@@ -55,12 +55,12 @@ repos:
         # Ignore any files that might contain jinja / bundles
         exclude: |
             (?x)^(
-                ampower_whatsapp_bots_flow/public/dist/.*|
+                ampower_helpdesk_whatsapp_bot/public/dist/.*|
                 cypress/.*|
                 .*node_modules.*|
                 .*boilerplate.*|
-                ampower_whatsapp_bots_flow/templates/includes/.*|
-                ampower_whatsapp_bots_flow/public/js/lib/.*
+                ampower_helpdesk_whatsapp_bot/templates/includes/.*|
+                ampower_helpdesk_whatsapp_bot/public/js/lib/.*
             )$
 
 ci:

@@ -1,9 +1,10 @@
-app_name = "ampower_whatsapp_bots_flow"
-app_title = "Ampower Whatsapp Bots Flow"
+app_name = "ampower_helpdesk_whatsapp_bot"
+app_title = "Ampower Helpdesk WhatsApp Bot"
 app_publisher = "Ambibuzz Technologies LLP"
-app_description = "ampower_whatsapp_bots_flow"
+app_description = "ampower_helpdesk_whatsapp_bot"
 app_email = "ithead@ambibuzz.com"
 app_license = "mit"
+
 
 # Apps
 # ------------------
@@ -13,11 +14,11 @@ app_license = "mit"
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
 # 	{
-# 		"name": "ampower_whatsapp_bots_flow",
-# 		"logo": "/assets/ampower_whatsapp_bots_flow/logo.png",
-# 		"title": "Ampower Whatsapp Bots Flow",
-# 		"route": "/ampower_whatsapp_bots_flow",
-# 		"has_permission": "ampower_whatsapp_bots_flow.api.permission.has_app_permission"
+# 		"name": "ampower_helpdesk_whatsapp_bot",
+# 		"logo": "/assets/ampower_helpdesk_whatsapp_bot/logo.png",
+# 		"title": "Ampower Helpdesk WhatsApp Bot",
+# 		"route": "/ampower_helpdesk_whatsapp_bot",
+# 		"has_permission": "ampower_helpdesk_whatsapp_bot.api.permission.has_app_permission"
 # 	}
 # ]
 
@@ -25,15 +26,15 @@ app_license = "mit"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/ampower_whatsapp_bots_flow/css/ampower_whatsapp_bots_flow.css"
-# app_include_js = "/assets/ampower_whatsapp_bots_flow/js/ampower_whatsapp_bots_flow.js"
+# app_include_css = "/assets/ampower_helpdesk_whatsapp_bot/css/ampower_helpdesk_whatsapp_bot.css"
+# app_include_js = "/assets/ampower_helpdesk_whatsapp_bot/js/ampower_helpdesk_whatsapp_bot.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/ampower_whatsapp_bots_flow/css/ampower_whatsapp_bots_flow.css"
-# web_include_js = "/assets/ampower_whatsapp_bots_flow/js/ampower_whatsapp_bots_flow.js"
+# web_include_css = "/assets/ampower_helpdesk_whatsapp_bot/css/ampower_helpdesk_whatsapp_bot.css"
+# web_include_js = "/assets/ampower_helpdesk_whatsapp_bot/js/ampower_helpdesk_whatsapp_bot.js"
 
 # include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "ampower_whatsapp_bots_flow/public/scss/website"
+# website_theme_scss = "ampower_helpdesk_whatsapp_bot/public/scss/website"
 
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
@@ -51,7 +52,7 @@ app_license = "mit"
 # Svg Icons
 # ------------------
 # include app icons in desk
-# app_include_icons = "ampower_whatsapp_bots_flow/public/icons.svg"
+# app_include_icons = "ampower_helpdesk_whatsapp_bot/public/icons.svg"
 
 # Home Pages
 # ----------
@@ -75,43 +76,43 @@ app_license = "mit"
 
 # add methods and filters to jinja environment
 # jinja = {
-# 	"methods": "ampower_whatsapp_bots_flow.utils.jinja_methods",
-# 	"filters": "ampower_whatsapp_bots_flow.utils.jinja_filters"
+# 	"methods": "ampower_helpdesk_whatsapp_bot.utils.jinja_methods",
+# 	"filters": "ampower_helpdesk_whatsapp_bot.utils.jinja_filters"
 # }
 
 # Installation
 # ------------
 
-# before_install = "ampower_whatsapp_bots_flow.install.before_install"
-# after_install = "ampower_whatsapp_bots_flow.install.after_install"
+# before_install = "ampower_helpdesk_whatsapp_bot.install.before_install"
+# after_install = "ampower_helpdesk_whatsapp_bot.install.after_install"
 
 # Uninstallation
 # ------------
 
-# before_uninstall = "ampower_whatsapp_bots_flow.uninstall.before_uninstall"
-# after_uninstall = "ampower_whatsapp_bots_flow.uninstall.after_uninstall"
+# before_uninstall = "ampower_helpdesk_whatsapp_bot.uninstall.before_uninstall"
+# after_uninstall = "ampower_helpdesk_whatsapp_bot.uninstall.after_uninstall"
 
 # Integration Setup
 # ------------------
 # To set up dependencies/integrations with other apps
 # Name of the app being installed is passed as an argument
 
-# before_app_install = "ampower_whatsapp_bots_flow.utils.before_app_install"
-# after_app_install = "ampower_whatsapp_bots_flow.utils.after_app_install"
+# before_app_install = "ampower_helpdesk_whatsapp_bot.utils.before_app_install"
+# after_app_install = "ampower_helpdesk_whatsapp_bot.utils.after_app_install"
 
 # Integration Cleanup
 # -------------------
 # To clean up dependencies/integrations with other apps
 # Name of the app being uninstalled is passed as an argument
 
-# before_app_uninstall = "ampower_whatsapp_bots_flow.utils.before_app_uninstall"
-# after_app_uninstall = "ampower_whatsapp_bots_flow.utils.after_app_uninstall"
+# before_app_uninstall = "ampower_helpdesk_whatsapp_bot.utils.before_app_uninstall"
+# after_app_uninstall = "ampower_helpdesk_whatsapp_bot.utils.after_app_uninstall"
 
 # Desk Notifications
 # ------------------
 # See frappe.core.notifications.get_notification_config
 
-# notification_config = "ampower_whatsapp_bots_flow.notifications.get_notification_config"
+# notification_config = "ampower_helpdesk_whatsapp_bot.notifications.get_notification_config"
 
 # Permissions
 # -----------
@@ -150,39 +151,39 @@ app_license = "mit"
 
 # scheduler_events = {
 # 	"all": [
-# 		"ampower_whatsapp_bots_flow.tasks.all"
+# 		"ampower_helpdesk_whatsapp_bot.tasks.all"
 # 	],
 # 	"daily": [
-# 		"ampower_whatsapp_bots_flow.tasks.daily"
+# 		"ampower_helpdesk_whatsapp_bot.tasks.daily"
 # 	],
 # 	"hourly": [
-# 		"ampower_whatsapp_bots_flow.tasks.hourly"
+# 		"ampower_helpdesk_whatsapp_bot.tasks.hourly"
 # 	],
 # 	"weekly": [
-# 		"ampower_whatsapp_bots_flow.tasks.weekly"
+# 		"ampower_helpdesk_whatsapp_bot.tasks.weekly"
 # 	],
 # 	"monthly": [
-# 		"ampower_whatsapp_bots_flow.tasks.monthly"
+# 		"ampower_helpdesk_whatsapp_bot.tasks.monthly"
 # 	],
 # }
 
 # Testing
 # -------
 
-# before_tests = "ampower_whatsapp_bots_flow.install.before_tests"
+# before_tests = "ampower_helpdesk_whatsapp_bot.install.before_tests"
 
 # Overriding Methods
 # ------------------------------
 #
 # override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "ampower_whatsapp_bots_flow.event.get_events"
+# 	"frappe.desk.doctype.event.event.get_events": "ampower_helpdesk_whatsapp_bot.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 # override_doctype_dashboards = {
-# 	"Task": "ampower_whatsapp_bots_flow.task.get_dashboard_data"
+# 	"Task": "ampower_helpdesk_whatsapp_bot.task.get_dashboard_data"
 # }
 
 # exempt linked doctypes from being automatically cancelled
@@ -196,13 +197,13 @@ app_license = "mit"
 
 # Request Events
 # ----------------
-# before_request = ["ampower_whatsapp_bots_flow.utils.before_request"]
-# after_request = ["ampower_whatsapp_bots_flow.utils.after_request"]
+# before_request = ["ampower_helpdesk_whatsapp_bot.utils.before_request"]
+# after_request = ["ampower_helpdesk_whatsapp_bot.utils.after_request"]
 
 # Job Events
 # ----------
-# before_job = ["ampower_whatsapp_bots_flow.utils.before_job"]
-# after_job = ["ampower_whatsapp_bots_flow.utils.after_job"]
+# before_job = ["ampower_helpdesk_whatsapp_bot.utils.before_job"]
+# after_job = ["ampower_helpdesk_whatsapp_bot.utils.after_job"]
 
 # User Data Protection
 # --------------------
@@ -232,7 +233,7 @@ app_license = "mit"
 # --------------------------------
 
 # auth_hooks = [
-# 	"ampower_whatsapp_bots_flow.auth.validate"
+# 	"ampower_helpdesk_whatsapp_bot.auth.validate"
 # ]
 
 # Automatically update python controller files with type annotations for this app.
